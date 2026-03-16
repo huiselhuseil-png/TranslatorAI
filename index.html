@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Playfair+Display:ital,wght@0,400;1,400&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-bg: url('https://i.pinimg.com/1200x/42/e4/45/42e445b2a6e64dbecb1840ca7c1fe30f.jpg');
+            --choco-bg: url('https://i.pinimg.com/736x/c6/4e/e1/c64ee1326f40cb79dd5936ade21b514b.jpg');
+            --wing-img: url('https://i.pinimg.com/736x/56/f3/d9/56f3d94acd2baf9eff2094fbccf417da.jpg');            
+            --lace-transparent: url('https://i.postimg.cc/RCWt0Lwj/oo.png');
+            --bow-transparent: url('https://i.postimg.cc/NFZfyTq1/o4.png');
+            --corner-l-transparent: url('https://i.postimg.cc/dkZsHQdZ/o.png');
+            --corner-r-transparent: url('https://i.postimg.cc/T1K3Y0S2/o2.png');
+            --cream: #f9f3e9;
+            --btn-overlay: rgba(166, 141, 133, 0.65);
+            --text-color: #4e342e;
+        }
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f3e5f5;
+            font-family: 'Playfair Display', serif;
+        }
+        .phone {
+            width: 380px;
+            height: 750px;
+            background-image: var(--main-bg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 45px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 10px solid white;
+            position: relative;
+        }
+
+        header {
+            background-image: var(--choco-bg);
+            background-size: cover;
+            padding-top: 50px; 
+            position: relative;
+            z-index: 5;
+        }
+
+        .corner-png {
+            position: absolute;
+            top: 5px;
+            width: 110px; 
+            height: 110px;
+            z-index: 10;
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        .left-corner { left: 5px; background-image: var(--corner-l-transparent); }
+        .right-corner { right: 5px; background-image: var(--corner-r-transparent); }
+        .welcome-card {
+            background-color: var(--cream);
+            margin: 0 25px;
+            padding: 15px 5px;
+            border-radius: 50px 50px 0 0;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 6;
+        }
+        .welcome-card h1 {
+            font-family: 'Amatic SC', cursive;
+            font-size: 50px;
+            color: var(--text-color);
+            margin: 0;
+            letter-spacing: 6px;
+        }
+        .lace-divider {
+            height: 100px;
+            width: 100%;
+            background-image: var(--lace-transparent);
+            background-repeat: repeat-x;
+            background-size: contain;
+            position: relative;
+            margin-top: -2px;
+            z-index: 7;
+        }
+        .bow-icon {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            z-index: 25;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.15));
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px; /* Spaced out for two buttons */
+            padding: 20px;
+        }
+        .btn {
+            width: 85%;
+            background: var(--btn-overlay);
+            border-radius: 100px;
+            padding: 25px 15px;
+            border: 1.5px solid rgba(255,255,255,0.4);
+            color: var(--text-color);
+            cursor: pointer;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            align-self: center;
+            text-align: center;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            background: rgba(166, 141, 133, 0.85);
+        }
+        .btn-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .wing {
+            width: 49px;
+            mix-blend-mode: multiply;
+        }
+        .btn h2 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 500;
+        }
+        .btn p {
+            margin: 6px 0 0 0;
+            font-size: 15px;
+            font-style: italic;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-color);
+        }
+        footer {
+            height: 120px;
+            position: relative;
+        }
+        .music {
+            position: absolute;
+            left: 5px;
+            bottom: 5px;
+            width: 230px;
+            mix-blend-mode: multiply;
+            opacity: 0.7;
+        }
+
+        .flower {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 100px;
+            mix-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <header>
+            <div class="corner-png left-corner"></div>
+            <div class="corner-png right-corner"></div>
+            <div class="welcome-card">
+                <h1>WELCOME</h1>
+            </div>
+            <div class="lace-divider">
+                <div class="bow-icon" style="height: 65px; background-image: var(--bow-transparent); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="btn" onclick="window.location.href='daalgavr2.html'">
+                <div class="btn-title">
+                    <img src="https://i.pinimg.com/736x/56/f3/d9/56f3d94acd2baf9eff2094fbccf417da.jpg" class="wing" alt="wing">
+                    <h2>Text</h2>
+                    <img src="https://i.pinimg.com/736x/56/f3/d9/56f3d94acd2baf9eff2094fbccf417da.jpg" class="wing" style="transform: scaleX(-1);" alt="wing">
+                </div>
+                <p>translate by writing texts!</p>
+            </div>
+            <div class="btn" onclick="window.location.href='daalgavr3.html'">
+                <div class="btn-title">
+                    <img src="https://i.pinimg.com/736x/56/f3/d9/56f3d94acd2baf9eff2094fbccf417da.jpg" class="wing" alt="wing">
+                    <h2>Mic</h2>
+                    <img src="https://i.pinimg.com/736x/56/f3/d9/56f3d94acd2baf9eff2094fbccf417da.jpg" class="wing" style="transform: scaleX(-1);" alt="wing">
+                </div>
+                <p>translate by just speaking!</p>
+            </div>
+        </main>
+        <footer>
+            <img src="https://i.pinimg.com/474x/7b/bc/4b/7bbc4b637b57ff4c91dbd17858ddc234.jpg" class="music" alt="music">
+            <img src="https://i.pinimg.com/1200x/99/5d/45/995d45f762b7a9abba94a53c137c3dc5.jpg" class="flower" alt="flower">
+        </footer>
+    </div>
+</body>
+</html>
